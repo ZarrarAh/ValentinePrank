@@ -1,4 +1,4 @@
-// script.js (robust full fil)
+// script.js (full fil med bilde på start + GIF etter Yes)
 
 const card = document.getElementById("card");
 const buttons = document.getElementById("buttons");
@@ -15,7 +15,6 @@ function moveNo() {
   if (!activated) {
     activated = true;
     noWrapper.style.position = "absolute";
-    // Lås den til nåværende posisjon før vi begynner å flytte
     noWrapper.style.left = `${noWrapper.offsetLeft}px`;
     noWrapper.style.top = `${noWrapper.offsetTop}px`;
   }
@@ -33,38 +32,52 @@ function moveNo() {
   noWrapper.style.top = `${y}px`;
 
   noMoves++;
+
+  // Yes vokser "for alltid" (juster 0.06 om du vil)
   const scale = 1.0 + noMoves * 0.06;
   yesBtn.style.transform = `scale(${scale})`;
 }
 
-// Desktop: flytt når musa nærmer seg
+// Desktop
 noBtn.addEventListener("mouseenter", moveNo);
 
-// Mobil: flytt når man prøver å trykke
+// Mobil
 noBtn.addEventListener(
   "touchstart",
   (e) => {
-    e.preventDefault(); // hindrer faktisk trykk
+    e.preventDefault();
     moveNo();
   },
   { passive: false }
 );
 
-// YES: bytt hele kortet til "resultat-skjerm"
+// YES -> resultat med GIF
 yesBtn.addEventListener("click", () => {
+  // Bytt "yay.gif" til din gif (evt assets/yay.gif)
+  const gifSrc = "assets/christucker-dance.gif";
+
   card.innerHTML = `
-    <h1 style="margin:0 0 14px;font-size:32px;">Yay! 🥰</h1>
-    <p style="margin:0 0 18px;font-size:18px;opacity:.8;">
+    <h1 style="margin:0 0 12px;font-size:32px;">Yay! 🥰</h1>
+
+    <img
+      src="${gifSrc}"
+      alt="Celebration GIF"
+      style="width:min(320px, 80vw); height:auto; display:block; margin:0 auto 14px; border-radius:16px;"
+      loading="eager"
+    />
+
+    <p style="margin:0 0 14px;font-size:18px;opacity:.85;">
       Bli med ut <b>15. februar</b>? 🍽️✨
     </p>
+
     <div style="font-size:18px;line-height:1.6;">
-      <br/>
+      📅 <b>15. februar</b><br/>
       💌 Gleder meg!
     </div>
   `;
 });
 
-// Hvis skjermstørrelse endres (mobil roterer)
+// Hvis skjermstørrelse endres
 window.addEventListener("resize", () => {
   if (activated) moveNo();
 });

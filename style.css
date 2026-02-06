@@ -53,4 +53,13 @@ h1 { margin: 0 0 18px; font-size: 28px; }
   color: #333;
 }
 
+.hero {
+  width: min(220px, 55vw);
+  height: auto;
+  display: block;
+  margin: 0 auto 14px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 .hint { margin: 10px 0 0; color: #666; }
