@@ -54,7 +54,7 @@ noBtn.addEventListener(
 // YES -> resultat med GIF
 yesBtn.addEventListener("click", () => {
   // Bytt "yay.gif" til din gif (evt assets/yay.gif)
-  const gifSrc = "assets/christucker-dance.gif";
+  const gifSrc = "Assets/christucker-dance.gif";
 
   card.innerHTML = `
     <h1 style="margin:0 0 12px;font-size:32px;">Yay! 🥰</h1>
