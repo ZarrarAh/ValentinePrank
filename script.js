@@ -54,10 +54,10 @@ noBtn.addEventListener(
 // YES -> resultat med GIF
 yesBtn.addEventListener("click", () => {
   // Bytt "yay.gif" til din gif (evt assets/yay.gif)
-  const gifSrc = "Assets/christucker-dance.gif";
+  const gifSrc = "Assets/Haram.jpg";
 
   card.innerHTML = `
-    <h1 style="margin:0 0 12px;font-size:32px;">Yay! 🥰</h1>
+    <h1 style="margin:0 0 12px;font-size:32px;">ASTAGHFIRULLAH</h1>
 
     <img
       src="${gifSrc}"
@@ -65,10 +65,6 @@ yesBtn.addEventListener("click", () => {
       style="width:min(320px, 80vw); height:auto; display:block; margin:0 auto 14px; border-radius:16px;"
       loading="eager"
     />
-
-    <p style="margin:0 0 14px;font-size:18px;opacity:.85;">
-      ASTAGHFIRULLAH <b>15. februar</b>?
-    </p>
 
     <div style="font-size:18px;line-height:1.6;">
        <b>HARAM!</b><br/>
