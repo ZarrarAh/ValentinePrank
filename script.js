@@ -53,25 +53,36 @@ noBtn.addEventListener(
 
 // YES -> resultat med GIF
 yesBtn.addEventListener("click", () => {
-  // Bytt "yay.gif" til din gif (evt assets/yay.gif)
-  const gifSrc = "Assets/Haram.jpg";
+  const imgSrc = "Assets/Haram.jpg"; // må matche repoet 100%
 
   card.innerHTML = `
     <h1 style="margin:0 0 12px;font-size:32px;">ASTAGHFIRULLAH</h1>
 
     <img
-      src="${gifSrc}"
-      alt="Celebration GIF"
+      id="resultImg"
+      src="${imgSrc}"
+      alt="Haram"
       style="width:min(320px, 80vw); height:auto; display:block; margin:0 auto 14px; border-radius:16px;"
       loading="eager"
     />
 
+    <p id="imgError" style="display:none;margin:0 0 14px;color:#b00020;">
+      Bildet ble ikke funnet: <span style="font-family:monospace;">${imgSrc}</span>
+    </p>
+
     <div style="font-size:18px;line-height:1.6;">
-       <b>HARAM!</b><br/>
-        Not good, not good at all!<br/>
+      <b>HARAM!</b><br/>
+      Not good, not good at all!<br/>
     </div>
   `;
+
+  const img = document.getElementById("resultImg");
+  const err = document.getElementById("imgError");
+  img.addEventListener("error", () => {
+    err.style.display = "block";
+  });
 });
+
 
 // Hvis skjermstørrelse endres
 window.addEventListener("resize", () => {
