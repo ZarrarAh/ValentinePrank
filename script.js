@@ -67,12 +67,12 @@ yesBtn.addEventListener("click", () => {
     />
 
     <p style="margin:0 0 14px;font-size:18px;opacity:.85;">
-      Bli med ut <b>15. februar</b>? 🍽️✨
+      ASTAGHFIRULLAH <b>15. februar</b>?
     </p>
 
     <div style="font-size:18px;line-height:1.6;">
-      📅 <b>15. februar</b><br/>
-      💌 Gleder meg!
+       <b>HARAM!</b><br/>
+        Not good, not good at all!<br/>
     </div>
   `;
 });
